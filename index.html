@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple UUIDs</title>
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <style>
+    body {
+      background-color: #2a2b2b;
+      color: white;
+    }
+
+    #main {
+      margin-top: 5rem;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-size: 150%;
+    }
+
+    li {
+      padding-top: 15px;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    .spacer {
+      padding-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="main">
+    <h2>Here are 10 UUID V4s</h2>
+    <div class="spacer"></div>
+    <ul id="uuids"></ul>
+    <div class="spacer"></div>
+    <h4>Refresh the page for more</h4>
+  </div>
+  <script type="module">
+    import { v4 as uuidv4 } from "https://jspm.dev/uuid";
+    for (let i = 0; i < 10; i ++) {
+      const li = document.createElement("li");
+      li.innerHTML = uuidv4();
+      document.getElementById("uuids").appendChild(li);
+    }
+  </script>
+</body>
+</html>
